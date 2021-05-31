@@ -20,8 +20,8 @@ jobs:
           environment: production
         # more steps below where you run your deployment scripts inside the same action
         
-  deploy:
-    name: Deploy my app
+  deploy2:
+    name: Deploy my app2
 
     runs-on: ubuntu-latest
 
