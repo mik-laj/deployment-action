@@ -33,7 +33,7 @@ jobs:
         id: deployment
         with:
           token: "${{ github.token }}"
-          target_url: http://my-app-url.com
+          target_url: http:/my-app.url.com
           environment: test-3
 
       - name: Deploy my app
