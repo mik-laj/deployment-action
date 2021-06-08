@@ -18,7 +18,6 @@ jobs:
           token: "${{ github.token }}"
           target_url: http://my-app-url.com
           environment: production
-        # more steps below where you run your deployment scripts inside the same action
         
   deploy2:
     name: Deploy my app2
@@ -33,8 +32,35 @@ jobs:
         id: deployment
         with:
           token: "${{ github.token }}"
+          state: "pending"
           target_url: http:/my-app.url.com
-          environment: test-4
+          environment: test-4-pending
+
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          state: "in_progress"
+          target_url: http:/my-app.url.com
+          environment: test-5-in-progress
+
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          state: "queued"
+          target_url: http:/my-app.url.com
+          environment: test-6-queued
+
+      - uses: chrnorm/deployment-action@releases/v1
+        name: Create GitHub deployment
+        id: deployment
+        with:
+          token: "${{ github.token }}"
+          target_url: http:/my-app.url.com
+          environment: test-7
 
       - name: Deploy my app
         run: |
