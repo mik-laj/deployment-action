@@ -38,7 +38,7 @@ jobs:
 
       - uses: chrnorm/deployment-action@releases/v1
         name: Create GitHub deployment
-        id: deployment
+        id: deployment1
         with:
           token: "${{ github.token }}"
           state: "in_progress"
@@ -47,7 +47,7 @@ jobs:
 
       - uses: chrnorm/deployment-action@releases/v1
         name: Create GitHub deployment
-        id: deployment
+        id: deployment2
         with:
           token: "${{ github.token }}"
           state: "queued"
@@ -56,7 +56,7 @@ jobs:
 
       - uses: chrnorm/deployment-action@releases/v1
         name: Create GitHub deployment
-        id: deployment
+        id: deployment3
         with:
           token: "${{ github.token }}"
           target_url: http:/my-app.url.com
