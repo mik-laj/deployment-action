@@ -34,11 +34,11 @@ jobs:
         with:
           token: "${{ github.token }}"
           target_url: http:/my-app.url.com
-          environment: test-3
+          environment: test-4
 
       - name: Deploy my app
         run: |
-          exit 1;
+          export;
 
       - name: Update deployment status (success)
         if: success()
